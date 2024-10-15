@@ -1,0 +1,99 @@
+/* Thiết lập chiều cao của body là 100% màn hình và xóa margin */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Chế độ sáng */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Chế độ tối */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Tạo khung chứa dropdown */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Đảm bảo nó nằm trên cùng ảnh nền */
+}
+
+/* Căn chỉnh dropdown */
+select {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px; /* Tăng kích thước chữ */
+    transition: border 0.3s; /* Hiệu ứng chuyển đổi cho border */
+}
+
+select:focus {
+    border-color: #007BFF; /* Màu border khi focus */
+}
+
+/* CSS cho cửa sổ chọn chế độ sáng/tối */
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Bo góc */
+    background-color: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Đảm bảo nó nằm trên cùng */
+}
+
+/* Biểu tượng trong toggle */
+.theme-icon {
+    cursor: pointer;
+    padding: 5px 10px; /* Thêm khoảng cách xung quanh biểu tượng */
+    border-radius: 5px; /* Bo góc cho biểu tượng */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+/* Hiệu ứng hover cho biểu tượng */
+.theme-icon:hover {
+    background-color: #e0e0e0; /* Màu nền khi hover */
+}
+
+/* Đặt màu đen cho dòng chữ "Chọn người bạn thấy đẹp trai nhất" */
+.dropdown-container h2 {
+    color: black; /* Luôn luôn có màu đen */
+    font-size: 24px; /* Tăng kích thước chữ */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+/* Dòng chữ chỉ xuất hiện khi bật nền sáng */
+.light-mode .light-message {
+    display: block; /* Hiển thị khi ở chế độ sáng */
+}
+
+.dark-mode .light-message {
+    display: none; /* Ẩn khi ở chế độ tối */
+}
+
+/* Thiết lập khoảng cách cho dòng chữ thông báo */
+.light-message {
+    font-size: 18px; /* Kích thước chữ */
+    margin-top: 15px; /* Khoảng cách trên */
+    color: #007BFF; /* Màu chữ */
+}
